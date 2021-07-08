@@ -16,17 +16,26 @@ function getIconClass(id) {
 const ShowWeather = (props) => {
   const { humidity, temp } = props.data.data.main
 
-  console.log(props.data)
   return (
-    <div className="ui raised center aligned segment">
-      <i className={getIconClass(props.data.data.weather[0].id)}></i>
-      Temperature: {temp}deg
-      <br />
-      Humidity: {humidity}%
-      <br />
-      Speed: {props.data.data.wind.speed * 3.6}km/h
-      <br />
-      District: {props.data.data.name}
+    <div className="show-weather" id="show-weather">
+      <div className="ui raised left aligned segments">
+        <div className="ui segment">
+          <i className={getIconClass(props.data.data.weather[0].id)}></i>
+          {temp}&deg;C
+        </div>
+        <div className="ui segment">
+          <i className="fas fa-humidity" style={{ color: '#7CB9E8' }}></i>
+          Humidity: {humidity}%
+        </div>
+        <div className="ui segment">
+          <i className="far fa-tachometer-fast"></i>
+          Speed: {props.data.data.wind.speed * 3.6} km/h
+        </div>
+        <div className="ui segment">
+          <i className="fas fa-road"></i>
+          District: {props.data.data.name}
+        </div>
+      </div>
     </div>
   )
 }

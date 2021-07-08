@@ -1,3 +1,24 @@
 body {
-  background-color: red;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: #212121;
+}
+
+.show-weather .ui.segment {
+  font-size: 3rem;
+}
+
+.show-weather .ui.segment:first-of-type i {
+  font-size: 5rem;
+  margin-right: 0.5em;
+}
+
+.show-weather .ui.segment:not(:first-of-type) {
+  font-size: 2rem;
+}
+
+i {
+  margin-right: 0.5em;
 }
